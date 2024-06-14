@@ -69,6 +69,7 @@ const ListEmployeeComponent = () => {
                         <td>{employee.email}</td>
                         <td>
                             <button className='btn btn-info' onClick={() => updateEmployee(employee.id)}>Update</button>
+                            <button className='btn btn-danger mx-3' onClick={() => updateEmployee(employee.id)}>Delete</button>
                         </td>
                     </tr>)
                 }
