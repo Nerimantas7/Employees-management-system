@@ -36,6 +36,7 @@ const EmployeeComponent = () => {
                 setFirstName(response.data.firstName);
                 setLastName(response.data.lastName);
                 setEmail(response.data.email);
+                setDepartmentId(response.data.departmentId);
             }).catch(error => {
                 console.error(error);
             });
@@ -48,7 +49,7 @@ const EmployeeComponent = () => {
 
         if (validateForm()) {
 
-            const employee = { firstName, lastName, email };
+            const employee = { firstName, lastName, email, departmentId };
 
             if (id) {
                 // Add a confirmation dialog
@@ -107,6 +108,13 @@ const EmployeeComponent = () => {
             errorsCopy.email = '';
         } else {
             errorsCopy.email = 'Email is required';
+            valid = false;
+        }
+
+        if (departmentId) {
+            errorsCopy.department = '';
+        } else {
+            errorsCopy.department = 'Select Department';
             valid = false;
         }
 
